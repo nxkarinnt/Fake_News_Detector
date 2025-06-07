@@ -29,8 +29,14 @@ def index():
         prediction = 'ข่าวปลอม (Fake News)' if pred == 1 else 'ข่าวจริง (Real News)'
     return render_template('index.html', prediction=prediction)
 
+import os
+
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    port = int(os.environ.get("PORT", 5000))  # Render จะกำหนด PORT มาเอง
+    app.run(host='0.0.0.0', port=port)
+
+# if __name__ == '__main__':
+#     app.run(host='0.0.0.0', port=5000, debug=True)
 
 # from flask import Flask, request, jsonify
 # import joblib
