@@ -1,2 +1,1 @@
-data/True.csv/
-data/Fake.csv/
+data/*.csv
