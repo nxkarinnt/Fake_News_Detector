@@ -7,8 +7,18 @@ from sklearn.metrics import classification_report, confusion_matrix
 import seaborn as sns
 import matplotlib.pyplot as plt
 
+# ---------- โหลดข้อมูลจาก Google Drive ----------
+import pandas as pd
+
+file_id = '1ZgE-P967p8FKe6vHORCaYhIivmH__U0T'  # เปลี่ยนให้ตรงกับไฟล์ของคุณ
+url = f'https://drive.google.com/uc?id={file_id}'
+df = pd.read_csv(url)
+
 # ---------- โหลดข้อมูล ----------
 df = pd.read_csv("data/fakeNews.csv", encoding="utf-8-sig")
+
+# ใช้ df ในการ train หรือ predict ได้เลย
+print(df.head())
 
 # ---------- รวมคอลัมน์ข้อความ ----------
 df['full_text'] = df[['title', 'text', 'subject', 'date']].fillna('').agg(' | '.join, axis=1)
