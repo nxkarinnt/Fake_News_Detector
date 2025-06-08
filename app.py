@@ -107,7 +107,7 @@ def index():
         cleaned = clean_and_tokenize(user_input)
         vec = tfidf.transform([cleaned])
         pred = model.predict(vec)[0]
-        prediction = 'ข่าวปลอม (Fake News)' if pred == 1 else 'ข่าวจริง (Real News)'
+        prediction = '⚠️Fake News⚠️' if pred == 1 else '✅Real News✅'
     return render_template('index.html', prediction=prediction)
 
 import os
