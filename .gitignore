@@ -1,2 +1,6 @@
 venv/
+__pycache__/
+*.pkl
+*.csv
+.git-filter-repo/
 data/*.csv
